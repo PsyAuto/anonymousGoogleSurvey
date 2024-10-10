@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+  </head>
+<body>
+  <h1>Your Token: <span id="token"></span></h1>
+  <p>Click the link below to access the Google Form:</p>
+  <a target="_blank" rel="noopener noreferrer" href="https://link-to-your-google-form.com">Go to Google Form</a>
+
+  <script>
+    var data = <?!= JSON.stringify(dataFromServerTemplate) ?>;
+    function initialize() {
+        document.getElementById("token").innerText = data.first;
+    }
+
+    window.onload = initialize;
+  </script>
+</body>
+</html>
